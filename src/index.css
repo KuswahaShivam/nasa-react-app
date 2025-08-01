@@ -1,0 +1,196 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  background-color: #030615;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+}
+.bgImage {
+  width: 100vw;
+  max-height: 100vh;
+  flex: 1;
+  object-fit: cover;
+  background-position: center;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 1rem;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+footer button i {
+  font-size: 1.3rem;
+}
+footer button:hover {
+  opacity: 0.7;
+}
+footer h2 {
+  font-size: 1.4rem;
+}
+footer h1 {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+.bgGradient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, #030615, rgba(255, 255, 255, 0));
+}
+
+.sideBar {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.bgOverLay {
+  position: absolute;
+  inset: 0;
+  background: #010a36;
+  opacity: 0.4;
+}
+
+.sideBarContents {
+  width: 65%;
+  height: 100vh;
+  z-index: 15;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-width: 800px;
+  margin-left: auto;
+  background: #030615;
+}
+.sideBarContents div {
+  flex: 1;
+}
+.sideBarContents button {
+  background: transparent;
+  color: white;
+  border: none;
+  margin-right: auto;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+.sideBarContents button i {
+  font-size: 18px;
+  padding: 1rem 0;
+}
+.sideBarContents button:hover {
+  opacity: 0.5;
+}
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sideBarContents h2 {
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+.descriptionTitle {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+.loadingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 10px;
+}
+.loadingState i {
+  background: conic-gradient(
+    from 45deg at 50% 50%,
+    rgb(148, 182, 0),
+    rgb(0, 68, 255),
+    rgb(0, 175, 29),
+    rgb(160, 0, 160)
+  );
+  background-clip: text;
+  color: transparent;
+  /* opacity: 0.8; */
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  .sideBar {
+    position: relative;
+    inset: unset;
+    max-width: 67vw;
+    box-shadow: 0 0 40px 1px #030615;
+  }
+  .sideBarContents {
+    margin: unset;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .sideBar {
+    position: fixed;
+    inset: 0;
+    min-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 40px 1px #030615;
+    z-index: 1;
+  }
+  .sideBarContents {
+    width: 80%;
+    margin-left: auto;
+  }
+}
