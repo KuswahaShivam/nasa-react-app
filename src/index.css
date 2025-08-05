@@ -22,6 +22,7 @@
   position: relative;
 }
 .imgContainer {
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +31,7 @@
   max-height: 100vh;
   flex: 1;
   object-fit: cover;
-  background-position: center;
+  background-attachment: local;
 }
 footer {
   position: fixed;
@@ -79,8 +80,11 @@ footer h1 {
 .sideBar {
   position: fixed;
   inset: 0;
+  min-width: 40vw;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 40px 1px #030615;
   z-index: 1;
 }
 
@@ -96,6 +100,8 @@ footer h1 {
   height: 100vh;
   z-index: 15;
   position: relative;
+  width: 10vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -107,7 +113,7 @@ footer h1 {
   background: #030615;
 }
 .sideBarContents div {
-  flex: 1;
+  flex: 0;
 }
 .sideBarContents button {
   background: transparent;
@@ -116,6 +122,8 @@ footer h1 {
   margin-right: auto;
   cursor: pointer;
   transition-duration: 200ms;
+  position: absolute;
+  bottom: 0;
 }
 .sideBarContents button i {
   font-size: 18px;
@@ -154,7 +162,6 @@ footer h1 {
   );
   background-clip: text;
   color: transparent;
-  /* opacity: 0.8; */
   font-size: 3rem;
   animation: spin 1s linear infinite;
 }
@@ -167,19 +174,41 @@ footer h1 {
   }
 }
 
-@media only screen and (max-width: 250px) {
+/* All Media Querry starts from here */
+
+@media screen and (min-width: 250px) and (max-width: 670px) {
   .sideBar {
     position: relative;
     inset: unset;
-    max-width: 67vw;
+    min-width: 67vw;
     box-shadow: 0 0 40px 1px #030615;
   }
   .sideBarContents {
+    width: 100%;
     margin: unset;
+  }
+  .sideBarContents button {
+    position: relative;
   }
 }
 
-@media only screen and (max-width: 1500px) {
+@media screen and (min-width: 70px) and (max-width: 250px) {
+  .sideBar {
+    position: fixed;
+    inset: 0;
+    min-width: 67vw;
+    box-shadow: 0 0 40px 1px #030615;
+  }
+  .sideBarContents {
+    width: 100%;
+    margin: unset;
+  }
+  .sideBarContents button {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
   .sideBar {
     position: fixed;
     inset: 0;
@@ -190,7 +219,23 @@ footer h1 {
     z-index: 1;
   }
   .sideBarContents {
-    width: 80%;
+    width: 60%;
+    margin-left: auto;
+  }
+
+  .imgContainer {
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+  .sideBarContents {
+    width: 60%;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1300px) and (max-width: 3004px) {
+  .sideBarContents {
+    width: 50%;
     margin-left: auto;
   }
 }

@@ -18,7 +18,7 @@ function App() {
       if (localStorage.getItem(localKey)) {
         const apiData = JSON.parse(localStorage.getItem(localKey));
         setData(apiData);
-        console.log("Fetched froom cache Today");
+        console.log("Fetched from cache Today");
         return;
       }
 
