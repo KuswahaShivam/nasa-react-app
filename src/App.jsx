@@ -31,7 +31,7 @@ function App() {
         const apiData = await res.json();
         localStorage.setItem(localKey, JSON.stringify(apiData));
         setData(apiData);
-        console.log("Fetched froom apiData Today");
+        console.log("Fetched from apiData Today");
       } catch (error) {
         console.log(error.message);
       }
