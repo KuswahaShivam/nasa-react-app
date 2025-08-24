@@ -153,15 +153,7 @@ footer h1 {
   padding: 10px;
 }
 .loadingState i {
-  background: conic-gradient(
-    from 45deg at 50% 50%,
-    rgb(148, 182, 0),
-    rgb(0, 68, 255),
-    rgb(0, 175, 29),
-    rgb(160, 0, 160)
-  );
-  background-clip: text;
-  color: transparent;
+  background: grey;
   font-size: 3rem;
   animation: spin 1s linear infinite;
 }
