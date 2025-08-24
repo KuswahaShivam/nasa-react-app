@@ -153,7 +153,8 @@ footer h1 {
   padding: 10px;
 }
 .loadingState i {
-  background: grey;
+  background: transparent;
+color:grey;
   font-size: 3rem;
   animation: spin 1s linear infinite;
 }
